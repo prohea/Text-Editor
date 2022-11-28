@@ -1,18 +1,18 @@
 {
-  "name": "JATE",
+  "name": "TEXT",
   "version": "1.0.0",
-  "description": "",
+  "description": "text-editor",
   "main": "server.js",
   "scripts": {
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "npm run build && cd server && node server.js",
-    "server": "cd server node server.js --ignore client",
+    "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
     "client": "cd client && npm start"
   },
   "keywords": [],
-  "author": "",
+  "author": "prohea",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
