@@ -28,11 +28,10 @@ registerRoute(({ request }) => request.mode === "navigate", pageCache);
 
 //Set up asset cache
 registerRoute(
-	//Define the callback function that wil filter the requests we want to cache (in this case, JS and CSS files)
-	({ request }) => ["style", "script", "worker"].includes(request.destination),
-	new StaleWhileRevalidate({
+	({ request }) => request.destination === "images",
+	new CacheFirst({
 		//Name of the cache storage
-		cacheName: "asset-cache",
+		cacheName: "image-cache",
 		plugins: [
 			//Will cache responses with these headers to a maximum-age of 30 days
 			new CacheableResponsePlugin({
