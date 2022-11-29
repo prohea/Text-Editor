@@ -13,8 +13,6 @@ const initdb = async () =>
 	});
 
 export const putDb = async (content) => {
-	console.log("PUT to the database");
-
 	//Create a connection to the database and version to use
 	const textDb = await openDB("text", 1);
 
@@ -49,8 +47,7 @@ export const getDb = async () => {
 
 	//Get confirmation of the request
 	const result = await request;
-	console.log("result.value", result);
-	return result?.value;
+	return result;
 };
 
 initdb();
