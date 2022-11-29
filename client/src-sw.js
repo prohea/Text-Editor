@@ -28,7 +28,7 @@ registerRoute(({ request }) => request.mode === "navigate", pageCache);
 
 //Set up asset cache
 registerRoute(
-	({ request }) => request.destination === "images",
+	({ request }) => ['style', 'script', 'worker'].includes(request.destination),
 	new CacheFirst({
 		//Name of the cache storage
 		cacheName: "image-cache",

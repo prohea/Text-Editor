@@ -9,7 +9,7 @@ module.exports = () => {
 		//Entry point for files
 		entry: {
 			main: "./src/js/index.js",
-			install: "./src/js/install.js"
+			install: "./src/js/install.js",
 		},
 		output: {
 			filename: "[name].bundle.js",
@@ -30,7 +30,7 @@ module.exports = () => {
 			new WebpackPwaManifest({
 				fingerprints: false,
 				inject: true,
-				name: "Text Editor",
+				name: "Text-Editor",
 				short_name: "TEXT",
 				description: "Text Editor",
 				background_color: "#0A090C",
@@ -55,12 +55,8 @@ module.exports = () => {
 					use: ["style-loader", "css-loader"],
 				},
 				{
-					test: /\.(png|svg|jpg|jpeg|gif)$/i,
-					type: 'asset/resource',
-        },
-        {
-          test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+					test: /\.m?js$/,
+					exclude: /(node_modules|bower_components)/,
 					//Use babel-loader in order to use ES6
 					use: {
 						loader: "babel-loader",
