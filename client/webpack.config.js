@@ -9,10 +9,7 @@ module.exports = () => {
 		//Entry point for files
 		entry: {
 			main: "./src/js/index.js",
-			install: "./src/js/install.js",
-			database: "./src/js/database.js",
-			editor: "./src/js/editor.js",
-			header: "./src/js/header.js",
+			install: "./src/js/install.js"
 		},
 		output: {
 			filename: "[name].bundle.js",
@@ -58,8 +55,12 @@ module.exports = () => {
 					use: ["style-loader", "css-loader"],
 				},
 				{
-					test: /\.m?js$/,
-					exclude: /node_modules/,
+					test: /\.(png|svg|jpg|jpeg|gif)$/i,
+					type: 'asset/resource',
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /(node_modules|bower_components)/,
 					//Use babel-loader in order to use ES6
 					use: {
 						loader: "babel-loader",
