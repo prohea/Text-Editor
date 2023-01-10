@@ -33,8 +33,9 @@ THEN I should have proper build scripts for a webpack application
 # Resources Used
 
 # Technologies Used
-HTML, CSS, JavaScript
+JavaScript
 # Deployed Project
+https://github.com/prohea/Text-TermEditor
 
 # Screenshot
 ![Text-Editor]()
